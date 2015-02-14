@@ -1,0 +1,18 @@
+<%= link_to 'Add a quiz', new_quiz_path %> 
+<br><br><br><br>                                                                          
+
+<% @quizzes.each do |q| %>
+
+
+Title: <%= q.title %> 
+Body: <%= q.body %>
+Category: <%= q.category %>
+Level: <%= q.level %>
+
+<%= link_to 'Edit', edit_quiz_path(q) %> 
+<%= link_to 'Delete', quiz_path(q), method: :delete, data: {confirm: "you sure?"} %> 
+
+<br><br><br>
+
+
+<% end %>
