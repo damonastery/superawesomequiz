@@ -1,0 +1,18 @@
+<%= form_for :quiz, url: quizzes_path do |f| %>
+
+
+<%= f.label :title %>
+<%= f.text_field :title %><br>
+
+<%= f.label :body %>
+<%= f.text_area :body %><br>
+
+<%= f.label :level %>
+<%= f.number_field :level %><br>
+
+<%= f.label :category %>
+<%= f.text_field :category %><br><br>
+
+<%= f.submit %> 
+
+<% end %>
