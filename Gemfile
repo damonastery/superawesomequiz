@@ -23,6 +23,10 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem "colorize"
+  gem "interactive_editor"
+  gem "hirb"
+  gem "awesome_print"
 end
 
 group :text do
