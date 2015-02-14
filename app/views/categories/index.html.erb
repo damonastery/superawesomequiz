@@ -1,0 +1,9 @@
+<%= link_to 'add', new_category_path %>
+<br><br>
+<% @categories.each do |c| %>
+
+<%= c.title %> 
+<%= link_to 'edit', edit_category_path(c) %>
+<%= link_to 'delete', category_path(c), method: :delete, data:{confirm: "you sure"} %>
+<br>
+<% end %>
