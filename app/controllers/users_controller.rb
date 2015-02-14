@@ -16,14 +16,13 @@ before_action :admin_user, only: :destroy
     @user = User.find(params[:id]) 
   end
 
-  def create 
-    #@user = User.new(params[:user]) Which becomes
-    @user = User.new(user_params) #as we pass in the Private method.
+  def create
+    @user = User.new(user_params)
     if @user.save
-      UserMailer.account_activation(@user).deliver_now
-      flash[:success] = "Please check your email to activate your account."
-      redirect_to root_url
-    else 
+      log_in @user
+      flash[:success] = "Welcome to the Sample App!"
+      redirect_to @user
+    else
       render 'new'
     end
   end
