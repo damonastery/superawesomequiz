@@ -8,11 +8,9 @@ Rails.application.routes.draw do
   resources :users
 
 
-
-  get 'welcome/index'
-
   get 'users/new'
   resources :quizzes 
+  resources :categories
 
   root 'welcome#index'
 
