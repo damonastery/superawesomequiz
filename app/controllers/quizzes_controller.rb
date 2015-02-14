@@ -31,9 +31,11 @@ class QuizzesController < ApplicationController
 
   def update
     @quiz = Quiz.find(params[:id])
-    if @quiz.save
+
+    if @quiz.update(quiz_params)
       redirect_to quizzes_path
-    else :edit
+    else 
+      render :edit
     end
   end
 
@@ -47,7 +49,7 @@ class QuizzesController < ApplicationController
 
   private
   def quiz_params 
-    params.require(:quiz).permit(:title, :body, :level, :category)
+    params.require(:quiz).permit(:title, :body, :level)
   end
 
 
