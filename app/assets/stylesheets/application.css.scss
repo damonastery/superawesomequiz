@@ -11,5 +11,11 @@
  * file per style scope.
  *
  */
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,700);
+
+$font-family-sans-serif: 'Lato', sans-serif;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "navbar";
