@@ -1,5 +1,14 @@
-<h1>Welcome Page </h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'features.jpg' %>">
+  <div class="home-container">
+    <div class="logo-container">
+      <center>
+        <h1>Welcome Page </h1>
+        <p>Find me in app/views/welcome/index.html.erb</p>
+        <%= link_to 'My Quizzes', controller: 'quizzes' %>
+      </center>
+    </div>
+  </div>
+</div>
 
-
-<%= link_to 'My Quizzes', controller: 'quizzes' %>
+<div class="home-container">
+</div>

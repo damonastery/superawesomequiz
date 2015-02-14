@@ -3,6 +3,9 @@ $bgHighlight    : #23ac9b;
 $colDefault     : #444444;
 $colHighlight   : #eeeeee;
 $dropDown       : false;
+.navbar {
+  margin: 0;
+}
 .navbar-default {
   background-color: $bgDefault;
   border-color: $bgHighlight;
