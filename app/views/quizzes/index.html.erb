@@ -4,7 +4,7 @@
 <% @quizzes.each do |q| %>
 
 
-Title: <%= q.title %> 
+Title: <%= link_to q.title, quiz_path(q) %> 
 Body: <%= q.body %>
 Category: <%= q.category %>
 Level: <%= q.level %>
