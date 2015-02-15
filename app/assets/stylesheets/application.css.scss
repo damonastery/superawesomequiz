@@ -20,21 +20,12 @@ $font-family-sans-serif: 'Lato', sans-serif;
 @import "bootstrap";
 @import "navbar";
 
-
-// Welcome Page
-
 body {
-  margin-top: 20px;
-  background-color: #444444;
+  margin-top: 50px;
 }
 
-.home-container {
-  height: 550px;
-  position: relative;
-  margin: 0 auto;
-}
-
-.logo-container{
+.session-container{
+  width: 500px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -52,42 +43,6 @@ body {
     }
 }
 
-.section-container{
-  height: 700px;
-  position: relative;
-  margin: 0 auto;
+.well-branded {
+  background-color: rgba(35,172,155,0.5);
 }
-
-.anchor-margin {
-  padding-top: 50px;
-}
-
-.placeholder-text {
-  color: white;
-  background-color: #23ac9b;
-  width: 250px;
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-
-
-// @media (max-width: 100px) {
-//   img {
-//     width: 10%
-//   }
-//   .placeholder-text {
-//     width: 10%;
-//   }
-//   .container {
-//     width: 10%;
-//   }
-//   .home-container {
-//   height: 850px;
-//   }
-//   #section_three {
-//     visibility: hidden;
-//   }
-// }
-
-
-// End Welcome Page
