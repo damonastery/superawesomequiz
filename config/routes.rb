@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     resources :questions
   end 
 
+  resources :questions do
+    resources :answers, only: [:create, :update]
+  end
   
   resources :categories
 
