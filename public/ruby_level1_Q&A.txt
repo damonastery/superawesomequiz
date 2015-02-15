@@ -7,7 +7,7 @@ Q1. Ruby array slice
 Given the following array
 stuff = [:dog,:cat,:orange,:banana]
 
-How can you slice this array to create a new array [:cat,:orange]
+How can you slice this array to create a new array [:cat,:orange]?
 
 A1. stuff[2..3]
 
@@ -209,8 +209,7 @@ A1.
     new_hash.store(elem) 
   }
 
-A2.
-  new_hash = my_arr
+A2. new_hash = my_arr
 
 A3. [ ['a',1], ['b',2], ['c','3' ] ].to_hash
 
