@@ -2,10 +2,12 @@ class QuizzesController < ApplicationController
 
   def new
     @quiz = Quiz.new
+    @categories = Category.all
   end
 
   def create
     # render text: params
+    @categories = Category.all
     @quiz = Quiz.new quiz_params
     if @quiz.save
       redirect_to @quiz
