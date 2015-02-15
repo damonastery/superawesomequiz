@@ -2,6 +2,7 @@ class QuizzesController < ApplicationController
 
   def new
     @quiz = Quiz.new
+    @categories = Category.all
   end
 
   def create
