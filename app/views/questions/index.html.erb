@@ -2,7 +2,8 @@
 <br><br>
 
 <% @questions.each do |q| %>
-  <%= q.title %> 
+  <%= q.title %> <br>
+  <%= q.body %><br>
   <%= link_to 'Edit', edit_quiz_question_path(@quiz, q) %>
   <%= link_to 'Delete', quiz_question_path(@quiz, q), method: :delete, data: {confirm: "Are you sure?"} %><br>  
 <% end %> 
