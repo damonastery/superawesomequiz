@@ -16,11 +16,13 @@ class QuizzesController < ApplicationController
 
   def show
     @quiz = Quiz.find(params[:id])
+    @category = Category.find(@quiz.category_id)
   end
 
 
   def index
     @quizzes = Quiz.all
+    @categories = Category.all
   end
 
 
@@ -49,7 +51,7 @@ class QuizzesController < ApplicationController
 
   private
   def quiz_params 
-    params.require(:quiz).permit(:title, :body, :level)
+    params.require(:quiz).permit(:title, :body, :level, :category_id)
   end
 
 

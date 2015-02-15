@@ -9,6 +9,18 @@
     <%= f.text_area :body, class: 'form-control' %><br>
     <%= f.label :level %>
     <%= f.number_field :level, class: 'form-control' %><br>
+
+    Select a category
+    <%= f.radio_button(:category_id, "1") %>
+    <%= f.label(:category_id, "blue") %>
+
+    <%= f.radio_button(:category_id, "4") %>
+    <%= f.label(:category_id, "red") %>
+
+    <%= f.radio_button(:category_id, "5") %>
+    <%= f.label(:category_id, "purple") %>
+
+
     <%= f.submit class: "btn btn-success" %>
     <%= button_tag "Reset", type: :reset, class: "btn btn-danger" %>
   <% end %>
