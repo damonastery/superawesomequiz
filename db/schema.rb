@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150215021716) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "correct"
   end
 
   create_table "categories", force: :cascade do |t|
