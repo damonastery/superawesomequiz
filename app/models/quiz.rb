@@ -9,5 +9,6 @@ class Quiz < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
   validates :level, presence: true, numericality: true
+  validates :category_id, presence: true
 
 end
