@@ -1,8 +1,9 @@
 class Question < ActiveRecord::Base
   
   belongs_to :quiz
-
-  validates :title, uniqueness: true
+  has_many :answers, dependent: :destroy
+  
+  validates :title, presence: true, uniqueness: true
 
   
 end
