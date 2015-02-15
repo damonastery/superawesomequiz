@@ -11,13 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150215024048) do
-||||||| merged common ancestors
-ActiveRecord::Schema.define(version: 20150215021716) do
-=======
-ActiveRecord::Schema.define(version: 20150215055223) do
->>>>>>> master
+ActiveRecord::Schema.define(version: 20150215095252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,14 +35,12 @@ ActiveRecord::Schema.define(version: 20150215055223) do
   create_table "questions", force: :cascade do |t|
     t.string   "title"
     t.integer  "quiz_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "body"
-    t.text     "explaination"
-    t.integer  "answer_id"
+    t.text     "explanation"
   end
 
-  add_index "questions", ["answer_id"], name: "index_questions_on_answer_id", using: :btree
   add_index "questions", ["quiz_id"], name: "index_questions_on_quiz_id", using: :btree
 
   create_table "quizzes", force: :cascade do |t|
@@ -98,12 +90,7 @@ ActiveRecord::Schema.define(version: 20150215055223) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
-<<<<<<< HEAD
-  add_foreign_key "questions", "answers"
-||||||| merged common ancestors
-=======
   add_foreign_key "answers", "questions"
->>>>>>> master
   add_foreign_key "questions", "quizzes"
   add_foreign_key "selections", "answers"
   add_foreign_key "selections", "users"
