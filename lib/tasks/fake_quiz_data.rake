@@ -22,10 +22,10 @@ namespace :fake_quiz_data do
     end
 
     # generate 10 questions for each quiz
-=begin    
+  
     Quiz.all.each do |quiz|
       10.times do 
-        question = quiz.questions.create(title: Faker::Lorem.word, body: Faker::Lorem.sentence(5))
+        question = quiz.questions.create(title: Faker::Lorem.word, body: Faker::Lorem.sentence(15), explaination: Faker::Lorem.sentence(10) )
       end
     end
 
@@ -36,9 +36,8 @@ namespace :fake_quiz_data do
         answer = question.answers.create(body: Faker::Lorem.sentences(5), correct: [true, false].sample)
       end
     end
-=end
 
-    # generate
+
   end
 
 end

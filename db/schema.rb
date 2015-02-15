@@ -72,6 +72,5 @@ ActiveRecord::Schema.define(version: 20150215035908) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "questions", "answers"
   add_foreign_key "questions", "quizzes"
 end
