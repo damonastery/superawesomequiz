@@ -6,7 +6,7 @@ namespace :fake_quiz_data do
 
     # generate 3 user
     3.times do 
-      user = User.create(name: Faker::Internet.password(7), email: Faker::Internet.email, password: Faker::Internet.password(8) )
+      user = User.create(name: Faker::Internet.password(7), email: Faker::Internet.email, password: Faker::Internet.password(8), admin: [true, false].sample, activated: true )
     end
 
     # generate 2 category

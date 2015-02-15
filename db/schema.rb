@@ -11,17 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215021716) do
+ActiveRecord::Schema.define(version: 20150215035908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.boolean  "correct"
+    t.integer  "question_id"
   end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "title"
@@ -36,8 +39,10 @@ ActiveRecord::Schema.define(version: 20150215021716) do
     t.datetime "updated_at",   null: false
     t.text     "body"
     t.text     "explaination"
+    t.integer  "answer_id"
   end
 
+  add_index "questions", ["answer_id"], name: "index_questions_on_answer_id", using: :btree
   add_index "questions", ["quiz_id"], name: "index_questions_on_quiz_id", using: :btree
 
   create_table "quizzes", force: :cascade do |t|
@@ -66,5 +71,7 @@ ActiveRecord::Schema.define(version: 20150215021716) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "questions", "answers"
   add_foreign_key "questions", "quizzes"
 end
