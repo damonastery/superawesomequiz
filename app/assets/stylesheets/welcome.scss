@@ -40,6 +40,7 @@ body {
   margin: 0 auto;
 }
 
+// This offsets the anchor link to make it hit the right spot
 .anchor-margin {
   padding-top: 50px;
 }
@@ -55,23 +56,22 @@ body {
 
 
 
-// @media (max-width: 100px) {
-//   img {
-//     width: 10%
-//   }
-//   .placeholder-text {
-//     width: 10%;
-//   }
-//   .container {
-//     width: 10%;
-//   }
-//   .home-container {
-//   height: 850px;
-//   }
-//   #section_three {
-//     visibility: hidden;
-//   }
-// }
+@media (max-width: 767px) {
+  // img {
+  //   width: 10%
+  // }
+  // .placeholder-text {
+  //   width: 10%;
+  // }
+  // .container {
+  //   width: 10%;
+  // }
+  .section-container {
+  height: 950px;
+  }
+  #section_three {
+    visibility: hidden;
+  }
+}
 
 
-// End Welcome Page
