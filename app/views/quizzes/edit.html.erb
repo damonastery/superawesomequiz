@@ -1,3 +1,18 @@
 <h1> Edit Quiz </h1>
 
-<%= render 'form' %> 
+<%= form_for :quiz, url: quiz_path(@quiz), method: :patch do |f| %>
+
+
+<%= f.label :title %>
+<%= f.text_field :title %><br>
+
+<%= f.label :body %>
+<%= f.text_area :body %><br>
+
+<%= f.label :level %>
+<%= f.number_field :level %><br>
+
+
+<%= f.submit %> 
+
+<% end %>

@@ -1,0 +1,13 @@
+<%# form_for :question, url: quiz_questions_path(@quiz) do |f| %> 
+<%= form_for [@quiz, @question] do |f| %> 
+  <%= f.label :title %> 
+  <%= f.text_field :title %><br>
+
+  <%= f.label :body %>
+  <%= f.text_area :body %> 
+
+  <%= f.label :explaination %>
+  <%= f.text_area :explaination %> 
+
+  <%= f.submit %>
+<% end %>  

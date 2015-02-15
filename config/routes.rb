@@ -9,8 +9,13 @@ Rails.application.routes.draw do
 
 
   get 'users/new'
-  resources :quizzes 
+  resources :quizzes do 
+    resources :questions
+  end 
+
+  
   resources :categories
+
 
   root 'welcome#index'
 

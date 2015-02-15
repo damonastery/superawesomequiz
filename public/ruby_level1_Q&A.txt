@@ -1,0 +1,257 @@
+Quiz: Array manipulation in Ruby, Level 1
+
+===
+
+Q1. Ruby array slice
+
+Given the following array
+stuff = [:dog,:cat,:orange,:banana]
+
+How can you slice this array to create a new array [:cat,:orange]?
+
+A1. stuff[2..3]
+
+A2. stuff[1...2]
+
+A3. stuff[1..2]
+
+Exp:
+The correct answer is 
+  A2. stuff[1..2]
+
+Array index starts at 0, so :cat and :orange are index 1, and 2. We want to slice at indices "1 to 2, including 2". 
+
+While "x..y" syntax means the range x to y, including y. 
+The "x...y" syntax means the range x to y, BUT NOT including y. 
+
+===
+
+Q2. Ruby array add onto the end
+Given the following array
+stuff = [:dog,:cat,:orange,:banana]
+
+How to add the element :apple on to the end of the array.
+
+A1. stuff << "apple"
+
+A2. stuff.apple
+
+A3. stuff[:apple]
+
+Exp:
+The correct answer is
+  A1. stuff << "apple"
+http://ruby-doc.org//core-2.2.0/Array.html#method-i-slice
+
+A2. stuff.apple - allows access a method or variable called "apple"
+
+A3. stuff[:apple] - allows access to hash with key of symbol apple (:apple)
+
+===
+
+Q3. Ruby array end remove
+Given the following array
+stuff = [:dog,:cat,:orange,:banana, :apple]
+
+take :banana, :apple off the array
+
+A1. stuff.pop
+ 
+A2. stuff.pop(2) 
+
+A3. stuff.shift
+
+Exp:
+The correct answer is
+
+  A2. stuff.pop(2) returns a new array of [: banana, :apple] that were popped off the stuff
+
+A1 does not pop off 2 elements, only returns [:apple]
+
+A3. stuff.shift removes the first element and returns it, so element :dog in this case.
+
+===
+
+Q4. Ruby array prepend
+Given the following array
+stuff = [:dog,:cat,:orange,:banana]
+
+Add the element :fish to the start of the array.
+
+A1. stuff.unshift(:fish)
+
+A2. stuff.shift(:fish)
+
+A3. stuff.shuffle
+
+Exp:
+The correct answer is
+
+A1. stuff.unshift(:fish) - unshift preprends the element to the front of the "stuff" array.
+
+method shift takes an integer to decide how many elements to remove from the front of the array, so A2. stuff.shift(:fish) will generate an error.
+
+method shuffle will return a new array with elements of stuff shuffled.
+
+===
+
+Q5. Ruby array front remove
+Given the following array
+stuff = [:fish, :dog,:cat,:orange,:banana]
+
+Now remove the element :fish.
+
+A1. stuff.shift
+
+A2. stuff.pop
+
+A3. stuff.unshift
+
+Exp:
+The correct answer is
+
+A1. stuff.shift
+
+method pop returns the last element and returns it
+
+method unshift adds an element to the front of the array. 
+
+===
+
+Q6. Ruby equal
+
+With comparison operators:   ==, ===, eql?, equal?
+str1 = "chitter"
+str2 = "chitter"
+
+str1 == str2 will result in "true", which of the following will result in "false"?
+
+A1.  str1 === str2
+
+A2.  str1.eql?(str2)
+
+A3.  str1.equal?(str2)
+
+Exp:
+The correct answer is A3. str1.equal?(str2)
+
+===
+
+Q7. Ruby equal 2
+
+sym1 = :chatter
+sym2 = :chatter
+
+sym1 == sym2 will result in "true", which of the following will result in "false"?
+
+A1. sym1.eql?(sym2)
+
+A2. sym1.object_id == sym2.object_id
+
+A3. none of the above answers
+
+Exp:
+The correct answer is A3. none of the above answers
+
+sym1 and sym2 are the same object.
+
+===
+
+Q8 Ruby method scope
+
+Given the following:
+
+class Dog
+  def speak
+      puts "woof"
+  end
+
+  private
+
+  def dream
+      puts "chasing a rabbit"
+  end
+end
+
+Given dog = Dog.new , how do I access the dog's dream?
+
+A1. dog.speak
+A2. dog.dream
+A3. add this to the public portion of the class Dog:
+    def get_dream
+      dream
+    end
+
+Exp:
+
+The correct answer is: A3. 
+
+The class Dog's dream is a private method, and can't be access directly from the outside scope without writing a few more lines of code
+
+A1. goes not access the dream portion, only prints out "woof"
+
+A2. will fail with NoMethodError : private method 'dream' called for Dog
+
+
+===
+
+Q9 Ruby convert an Array of tuples to a Hash
+
+Given the following Array of tuples:
+  my_arr = [  ['a',1], ['b',2], ['c','3']  ]
+  new_hash = {}
+
+How can I convert this to a Hash? so that new_hash becomes:
+  { 'a' => 1, 'b' => 2, 'c' => 3}
+
+A1. 
+  my_arr.each { |elem| 
+    new_hash.store(elem) 
+  }
+
+A2. new_hash = my_arr
+
+A3. [ ['a',1], ['b',2], ['c','3' ] ].to_hash
+
+Exp: 
+The correct answer is A3.
+
+For A1, this would generate an error because of the store method:
+in `store': wrong number of arguments (1 for 2) (ArgumentError). Because '.each' method in Ruby Array will return a flattened array's elements, not the inner arrays that we'd expect.
+
+If you want to implement your own 'to_hash' method:
+
+my_arr = [  ['a',1], ['b',2], ['c','3']  ]
+new_hash ={}
+for i in 0...my_arr.length  do
+# or use my_arr.each { 
+    elem = my_arr[i]
+    new_hash.store(elem[0], elem[1]) 
+end
+puts new_hash
+
+
+
+===
+
+Q10 String concatenation in Ruby
+
+What will original and copy evaluate to in each of the following examples? 
+
+  original = "hello"
+  copy = original
+  copy << " there"
+  puts copy
+  puts original
+
+A1. original output "hello there", copy output "hello there"
+
+A2. original output "hello", copy output "hello there"
+
+A3. original output "hello", copy output "hello"
+
+Exp: 
+
+The correct answer is A1
+
+when you << "there", you are actually operating on the same object that is original and copy. This is the concept of mutable and immutable object, reference "freeze" in Ruby.
