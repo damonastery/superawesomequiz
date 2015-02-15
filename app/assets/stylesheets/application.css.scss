@@ -51,18 +51,42 @@ body {
     }
 }
 
-.feature-container{
-  background-color: #23ac9b;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  // transform: translate(-50%, -50%);
+.language-container{
+  height: 700px;
+  position: relative;
+  margin: 0 auto;
 }
 
 .anchor-margin {
   padding-top: 50px;
 }
 
+.placeholder-text {
+  color: white;
+  background-color: #23ac9b;
+  width: 250px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+
+// @media (max-width: 100px) {
+//   img {
+//     width: 10%
+//   }
+//   .placeholder-text {
+//     width: 10%;
+//   }
+//   .container {
+//     width: 10%;
+//   }
+//   .home-container {
+//   height: 850px;
+//   }
+//   #section_three {
+//     visibility: hidden;
+//   }
+// }
 
 
 // End Welcome Page
