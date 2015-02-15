@@ -30,6 +30,7 @@ body {
 .home-container {
   height: 550px;
   position: relative;
+  margin: 0 auto;
 }
 
 .logo-container{
@@ -50,14 +51,17 @@ body {
     }
 }
 
-.login-container{
+.feature-container{
   background-color: #23ac9b;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  // transform: translate(-50%, -50%);
 }
 
+.tab-content {
+  width: 200px;
+}
 
 
 
