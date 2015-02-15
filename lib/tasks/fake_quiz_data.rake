@@ -37,7 +37,12 @@ namespace :fake_quiz_data do
       end
     end
 
-
+    # generate random selection pairings between users and answers
+    User.all.each do |u|
+      10.times do
+        selection = u.selections.create(points: rand(500), answer_id: Answer.select("id").sample.id )
+      end
+    end
   end
 
 end
