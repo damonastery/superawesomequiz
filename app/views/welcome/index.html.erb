@@ -2,21 +2,22 @@
   <div class="home-container">
     <div class="logo-container">
       <center>
-        <h1>Welcome Page </h1>
-        <p>Find me in app/views/welcome/index.html.erb</p>
-        <%= link_to 'My Quizzes', controller: 'quizzes' %>
+        <h1>Are you a Codecore wizard?</h1>
+        <h3>
+        <%= link_to("Learn More...", root_path(:anchor => "section_two")) %>
+        |
+        <%= link_to("Get started...", root_path(:anchor => "#")) %>
+        <%#= link_to 'My Quizzes', controller: 'quizzes' %>
+        </h3>
       </center>
-    </div>
-    <div class="feature-container">
-      
     </div>
   </div>
 </div>
 
 
-<div class="parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'features2.jpg' %>">
+<div  id="section_two" class="parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'features2.jpg' %>">
   <div class="home-container">
-    <div class="container">
+    <div class="container anchor-margin">
       <center>
         <div class="col-md-4">
           <img src="http://placehold.it/300x300">
