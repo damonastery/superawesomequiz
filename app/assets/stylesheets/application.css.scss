@@ -25,6 +25,7 @@ $font-family-sans-serif: 'Lato', sans-serif;
 
 body {
   margin-top: 20px;
+  background-color: #444444;
 }
 
 .home-container {
@@ -51,7 +52,7 @@ body {
     }
 }
 
-.language-container{
+.section-container{
   height: 700px;
   position: relative;
   margin: 0 auto;
