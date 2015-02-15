@@ -1,10 +1,12 @@
-<%= link_to 'Add', new_quiz_question_path(@quiz) %>
-<br><br>
-
+<h1>SHOW ALL QUESTIONS FOR SPECIFIC QUIZ</h1>
+<p>views/questions/index.html.erb</p>
+<br>
+<%= link_to 'Add NEW QUESTION to the quiz', new_quiz_question_path(@quiz), class: "btn btn-lg btn-success" %>
+<br>
 <% @questions.each do |q| %>
-  <%= q.title %><br>
-  <%= q.body %><br>
-  <%= q.explaination %><br>
-  <%= link_to 'Edit', edit_quiz_question_path(@quiz, q) %>
-  <%= link_to 'Delete', quiz_question_path(@quiz, q), method: :delete, data: {confirm: "Are you sure?"} %><br>  
+  <h3><%= link_to q.title, edit_quiz_question_path(@quiz, q) %></h3><br>
+  <p>Q Body: <%= q.body %></p><br>
+  <p>Q explaination: <%= q.explaination %></p><br>
+  <p><%= link_to 'Edit', edit_quiz_question_path(@quiz, q), class: "btn btn-xs btn-primary"  %>
+  <%= link_to 'Delete', quiz_question_path(@quiz, q), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger"  %></p><br>
 <% end %> 

@@ -1,13 +1,16 @@
+<div class="form-group">
 <%# form_for :question, url: quiz_questions_path(@quiz) do |f| %> 
-<%= form_for [@quiz, @question] do |f| %> 
-  <%= f.label :title %> 
-  <%= f.text_field :title %><br>
+  <%= form_for [@quiz, @question] do |f| %> 
+    <%= f.label :title %> 
+    <%= f.text_field :title, class: 'form-control' %><br>
 
-  <%= f.label :body %>
-  <%= f.text_area :body %> 
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'form-control' %><br>
 
-  <%= f.label :explaination %>
-  <%= f.text_area :explaination %> 
+    <%= f.label :explaination %>
+    <%= f.text_area :explaination, class: 'form-control' %><br>
 
-  <%= f.submit %>
-<% end %>  
+    <%= f.submit class: "btn btn-success" %>
+    <%= button_tag "Reset", type: :reset, class: "btn btn-danger" %>
+  <% end %>  
+</div>
