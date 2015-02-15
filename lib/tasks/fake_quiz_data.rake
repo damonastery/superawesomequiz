@@ -6,7 +6,7 @@ namespace :fake_quiz_data do
 
     # generate 3 user
     3.times do 
-      user = User.create(name: Faker::Internet.password(7), email: Faker::Internet.email, password: Faker::Internet.password(8) )
+      user = User.create(name: Faker::Internet.password(7), email: Faker::Internet.email, password: Faker::Internet.password(8), admin: [true, false].sample, activated: true )
     end
 
     # generate 2 category
@@ -22,10 +22,10 @@ namespace :fake_quiz_data do
     end
 
     # generate 10 questions for each quiz
-=begin    
+  
     Quiz.all.each do |quiz|
       10.times do 
-        question = quiz.questions.create(title: Faker::Lorem.word, body: Faker::Lorem.sentence(5))
+        question = quiz.questions.create(title: Faker::Lorem.word, body: Faker::Lorem.sentence(15), explaination: Faker::Lorem.sentence(10) )
       end
     end
 
@@ -36,9 +36,20 @@ namespace :fake_quiz_data do
         answer = question.answers.create(body: Faker::Lorem.sentences(5), correct: [true, false].sample)
       end
     end
-=end
 
-    # generate
+    User.all.each do |u|
+
+      # generate random selection pairings between users and answers
+      10.times do
+        selection = u.selections.create(points: rand(500), answer_id: Answer.select("id").sample.id )
+      end
+
+      # generate random UserQuiz pairings between users and quizzes
+      2.times do
+        userquiz = u.user_quizzes.create(quiz_id: Quiz.select("id").sample.id )
+      end 
+    end
+
   end
 
 end
