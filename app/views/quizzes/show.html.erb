@@ -1,9 +1,11 @@
+<h1> You have created: </h1>
+
 <%= link_to 'My quizzes', quizzes_path %> <br><br>
 
-<h1><strong>Quiz: </strong><%= @quiz.title %> </h1><br>
-<%= @quiz.body %><br>
-<%= @quiz.category %><br>
-<%= @quiz.level %><br>
+<p>Quiz Title <%= @quiz.title %></p><br>
+<p>Quiz Body <%= @quiz.body %></p><br>
+<p>Quiz Category <%= @quiz.category %></p><br>
+<p>Quiz Level <%= @quiz.level %></p><br>
 
 <hr>
 

@@ -2,13 +2,65 @@
   <div class="home-container">
     <div class="logo-container">
       <center>
-        <h1>Welcome Page </h1>
-        <p>Find me in app/views/welcome/index.html.erb</p>
-        <%= link_to 'My Quizzes', controller: 'quizzes' %>
+        <h1>Are you a Codecore wizard?</h1>
+        <h3>
+        <%= link_to("Learn More...", root_path(:anchor => "section_two")) %>
+        |
+        <%= link_to("Get started...", root_path(:anchor => "#")) %>
+        <%#= link_to 'My Quizzes', controller: 'quizzes' %>
+        </h3>
       </center>
     </div>
   </div>
 </div>
 
-<div class="home-container">
+
+<div id="section_two" class="parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'features2.jpg' %>">
+  <div class="section-container row">
+    <div class="container anchor-margin">
+      <center>
+        <div class="col-sm-4">
+          <img src="http://placehold.it/250x250">
+          <h3 class="placeholder-text">HTML</h3>
+        </div>
+        <div class="col-sm-4">
+          <img src="http://placehold.it/250x250">
+          <h3 class="placeholder-text">CSS</h3>
+        </div>
+        <div class="col-sm-4">
+          <img src="http://placehold.it/250x250">
+          <h3 class="placeholder-text">RUBY</h3>
+        </div>
+      </center>
+    </div>
+    <div class="container">
+      <center>
+        <div class="col-sm-4">
+          <img src="http://placehold.it/250x250">
+          <h3 class="placeholder-text">JavaScript</h3>
+        </div>
+        <div class="col-sm-4">
+          <img src="http://placehold.it/250x250">
+          <h3 class="placeholder-text">RAILS</h3>
+        </div>
+        <div class="col-sm-4">
+          <img src="http://placehold.it/250x250">
+          <h3 class="placeholder-text">CODE</h3>
+        </div>
+      </center>
+    </div>
+
+  </div>
+</div>
+
+<div class="parallax-window" data-parallax="scroll" data-image-src="<%= asset_path 'features3.jpg' %>">
+  <div class="section-container">
+    <div class="container anchor-margin">
+      <center>
+        <div id="section_three" class="row">   
+          <img class="col-xs-12" src="http://placehold.it/900x300">
+        </div>
+      </center>
+    </div>
+  </div>
 </div>

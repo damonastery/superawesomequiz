@@ -1,10 +1,12 @@
-<h1>Sign Up</h1>
-  <div class="row">
-   <div class="col-md-6 col-md-offset-3">
-     <%= form_for(@user) do |f| %>
-     <%= render 'fields', f: f %>
-     <%= f.submit "Create my account", class: "btn btn-primary" %>
-     <% end %>
-   </div>
- </div> 
-<p>This will be a sign up page for new users</p>
+<div class="session-container">
+  <div class="well well-branded">
+    <h1>Sign Up</h1>
+    <div class="form-group">
+      <%= form_for(@user) do |f| %>
+      <%= render 'fields', f: f %>
+      <br>
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

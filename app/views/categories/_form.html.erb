@@ -1,6 +1,6 @@
-<h1> Form </h1>
-
-<%= form_for :category, url: categories_path do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<% end %> 
+<div class="form-group">
+  <%= form_for :category, url: categories_path do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  <% end %>
+</div>

@@ -2,10 +2,8 @@ $bgDefault      : #ffffff;
 $bgHighlight    : #23ac9b;
 $colDefault     : #444444;
 $colHighlight   : #eeeeee;
-$dropDown       : false;
-.navbar {
-  margin: 0;
-}
+$dropDown       : true;
+
 .navbar-default {
   background-color: $bgDefault;
   border-color: $bgHighlight;
@@ -53,6 +51,11 @@ $dropDown       : false;
     color: $colDefault;
     &:hover {
       color: $colHighlight; }}}
+
+.navbar {
+  margin: 0;
+}
+
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu {
     > li > a {
