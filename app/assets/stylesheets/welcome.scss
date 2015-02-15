@@ -4,9 +4,17 @@
 
 // Welcome Page
 
+
 body {
   margin-top: 20px;
   background-color: #ffffff;
+}
+
+.login-menu {
+  min-width: 300px !important;
+  max-width: 300px !important;
+  height: 230px !important;
+  padding: 10px;
 }
 
 .home-container {
