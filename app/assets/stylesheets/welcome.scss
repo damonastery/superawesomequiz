@@ -34,6 +34,13 @@ body {
 }
 
 
+.solid-container{
+  height: 700px;
+  position: relative;
+  margin: 0 auto;
+  background-color: #eeeeee;
+}
+
 .section-container{
   height: 700px;
   position: relative;
@@ -66,8 +73,8 @@ body {
   // .container {
   //   width: 10%;
   // }
-  .section-container {
-  height: 950px;
+  .section-container, .solid-container {
+    height: 950px;
   }
   #section_three {
     visibility: hidden;
